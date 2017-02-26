@@ -87,13 +87,14 @@ where each data item is separated by a comma (,).
 
 A brief explanation of each of these data items:
 
-  Round Number: numeric value indicating the round of the competition
-  Match Number: unique numeric value identifying the match (this value is unique across all rounds)
-  Home Team: name of team playing at home ground in this match
-  Away Team: name of team playing away from home ground in this match
-  Venue: name of the ground or stadium where the match is played (normally this will be the Home Team’s home ground)
-  Time: time of kickoff (start) for the match
-  Date: date of the match
+  **Round Number:** numeric value indicating the round of the competition  
+  **Match Number:** unique numeric value identifying the match (this value is unique across all rounds)  
+  **Home Team:** name of team playing at home ground in this match  
+  **Away Team:** name of team playing away from home ground in this match  
+  **Venue:** name of the ground or stadium where the match is played (normally this will be the Home Team’s home ground)  
+  **Time:** time of kickoff (start) for the match  
+  **Date:** date of the match
+
 **Important Notes:** Most rounds of the NRL competition have eight (8) matches. However, some rounds may have less than eight (8) matches since some rounds are played as a split round. Your program needs to be able to cater for this. Your program cannot assume which rounds will be split nor how many matches will be in the split rounds. The maximum number of matches per round is eight (8).
 
 One (1) Fixtures.txt file has been provided in the project zip file.
