@@ -29,8 +29,8 @@ In this programming project you will write an object-oriented menu-driven java p
 
 **_B(ii) - Program Requirements/Functionality_**
 The Java program **must**
-  A. be object-oriented utilising the classes described in section B (iv) **as a minimum**. Other classes may also be needed to solve the program requirements;
-  B.  be menu-driven. The main menu must have the following menu items:
+  1. be object-oriented utilising the classes described in section B (iv) **as a minimum**. Other classes may also be needed to solve the program requirements;
+  2.  be menu-driven. The main menu must have the following menu items:
     1. Display Match Schedule
     2. Enter Round Results
     3. Display Ladder
@@ -38,12 +38,12 @@ The Java program **must**
     5. Fixtures
     6. Exit Program
 
-  C. be able to process the defined text files. The text files and their formats are described in section B (iii).
+  3. be able to process the defined text files. The text files and their formats are described in section B (iii).
 
 **Program Start Up**
 When the java program starts it must perform the following file related operations:
-  D. Read the data from the teams.txt file into computer memory into an appropriate array of objects (see section B (iii) for a description of the teams text file and section B (iv) for a description of the Team class);
-  E. Read the data from the fixtures.txt file into computer memory into an appropriate array of objects (see section B (iii) for a description of the fixtures text file and section B (iv) for a description of the Fixtures class);
-  F. Prompt the user for the current round number. Validate the round number to be in the range 1 (first round of the competition) to 26 (last round of the competition). Load into computer memory (into an appropriate array of objects) the results for each round up to and including the round number entered by the user. To do this the program will need to process each round’s result text file in turn. Note: If a text file for a round’s results does not exist then the program should process only up to that round rather than the round number input by the user. In such a situation the user should be notified which round file(s) were not loaded. The user may create the missing round results files through menu option 2 if they choose to do so.
-  
+  4. Read the data from the teams.txt file into computer memory into an appropriate array of objects (see section B (iii) for a description of the teams text file and section B (iv) for a description of the Team class);
+  5. Read the data from the fixtures.txt file into computer memory into an appropriate array of objects (see section B (iii) for a description of the fixtures text file and section B (iv) for a description of the Fixtures class);
+  6. Prompt the user for the current round number. Validate the round number to be in the range 1 (first round of the competition) to 26 (last round of the competition). Load into computer memory (into an appropriate array of objects) the results for each round up to and including the round number entered by the user. To do this the program will need to process each round’s result text file in turn. Note: If a text file for a round’s results does not exist then the program should process only up to that round rather than the round number input by the user. In such a situation the user should be notified which round file(s) were not loaded. The user may create the missing round results files through menu option 2 if they choose to do so.
+
 After processing these files the program should display the main menu.
