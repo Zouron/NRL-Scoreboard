@@ -6,14 +6,14 @@
  * Class Day: Friday
  * Class Time: 11:00 AM
  */
-public class Round_18267684 {
+public class Round {
 	public static int currentRound = 0;						//The current round number
 	public static final int TOTAL_ROUNDS = 26;		//The maximum number of rounds playable
 	
 	private int roundNumber;									//The round number
 	private int numberOfFixtures;							//The number fixtures in the round
-	private Fixture_18267684[] fixtureInformation;			//An array of fixtures that hold information on the matches/fixtures in the round
-	private Results_18267684[] roundResults;						//The results of the fixtures/matches in this round
+	private Fixture[] fixtureInformation;			//An array of fixtures that hold information on the matches/fixtures in the round
+	private Results[] roundResults;						//The results of the fixtures/matches in this round
 	
 	/**
 	 * This method returns the round number of the current round
@@ -37,16 +37,16 @@ public class Round_18267684 {
 	 * @param fixtureSize - The number of fixtures in the round
 	 * @param tempFixtures - An array of fixtures, that contain information on each match/fixture in the round
 	 */
-	public Round_18267684(int round, int fixtureSize, Fixture_18267684[] tempFixtures){
+	public Round(int round, int fixtureSize, Fixture[] tempFixtures){
 		roundNumber = round;
 		numberOfFixtures =  fixtureSize;
-		fixtureInformation = new Fixture_18267684[numberOfFixtures];
+		fixtureInformation = new Fixture[numberOfFixtures];
 		for(int i=0; i< numberOfFixtures; i++){
 			//tempFixtures is of size 8, by using the fixtureSize we create the fixture of 
 			//the appropriate size to allow for less that 8 fixtures in a round
-			fixtureInformation[i] = new Fixture_18267684(tempFixtures[i]);
+			fixtureInformation[i] = new Fixture(tempFixtures[i]);
 		}
-		roundResults = new Results_18267684[numberOfFixtures];
+		roundResults = new Results[numberOfFixtures];
 	}
 	
 	/**
@@ -55,14 +55,14 @@ public class Round_18267684 {
 	 * @param newResults - An array of Results of the round
 	 * @param teamList - A list of the teams
 	 */
-	public void insertRoundResults(Results_18267684 newResults[], Team_18267684 teamList[]){
+	public void insertRoundResults(Results newResults[], Team teamList[]){
 		//An array of booleans created to check if a team has played in this round
-		boolean hasTeamPlayed[] = new boolean[Team_18267684.TOTAL_TEAMS];
+		boolean hasTeamPlayed[] = new boolean[Team.TOTAL_TEAMS];
 		int homeTeamIndex;
 		int awayTeamIndex;
 		
 		for(int i=0; i < newResults.length; i++ ){
-			roundResults[i] = new Results_18267684(newResults[i]);								//Copying the new results into this round
+			roundResults[i] = new Results(newResults[i]);								//Copying the new results into this round
 			int homeTeamScore=roundResults[i].getHomeTeamScore();
 			int awayTeamScore = roundResults[i].getAwayTeamScore();
 			
@@ -88,19 +88,19 @@ public class Round_18267684 {
 				teamList[awayTeamIndex].setDrawStats(awayTeamScore);
 			}
 			//Debug messages set to check if reading correctly ( activate in Debug class)
-			Debug_18267684.log("away index",awayTeamIndex);
-			Debug_18267684.log("away score", awayTeamScore);
-			Debug_18267684.log("home index" ,homeTeamIndex);
-			Debug_18267684.log("home score",homeTeamScore);
-			Debug_18267684.log("home points",teamList[homeTeamIndex].getPointsScored());
-			Debug_18267684.log(teamList[homeTeamIndex].getTeamName(), teamList[homeTeamIndex].getTotalPoints());
+			Debug.log("away index",awayTeamIndex);
+			Debug.log("away score", awayTeamScore);
+			Debug.log("home index" ,homeTeamIndex);
+			Debug.log("home score",homeTeamScore);
+			Debug.log("home points",teamList[homeTeamIndex].getPointsScored());
+			Debug.log(teamList[homeTeamIndex].getTeamName(), teamList[homeTeamIndex].getTotalPoints());
 		}
 		
 		//We go through the array of boolean and if a team hasn't played we award them a bye
 		for(int i=0; i <hasTeamPlayed.length; i++){
 			if(!hasTeamPlayed[i]){
 				teamList[i].awardByePoints();
-				Debug_18267684.log("Bye awarded to :" +teamList[i].getTeamName());
+				Debug.log("Bye awarded to :" +teamList[i].getTeamName());
 			}
 		}
 	}
@@ -112,7 +112,7 @@ public class Round_18267684 {
 	 * @param teamList - The list of the teams to chekc against
 	 * @return - index of of the team in the list
 	 */
-	public static int getTeamIndex(String teamName, Team_18267684 teamList[]){
+	public static int getTeamIndex(String teamName, Team teamList[]){
 		int index=0;
 		for(int i=0; i<teamList.length; i++){
 			if(teamName.equals(teamList[i].getTeamName()))
@@ -125,7 +125,7 @@ public class Round_18267684 {
 	 * This method returns information of all the fixtures in this round
 	 * @return - The fixture information
 	 */
-	public Fixture_18267684[] getRoundFixture(){
+	public Fixture[] getRoundFixture(){
 		return fixtureInformation;
 	}
 	
@@ -134,7 +134,7 @@ public class Round_18267684 {
 	 */
 	public void showFixtures(){
 		for(int i=0; i<numberOfFixtures; i++){
-			Debug_18267684.log(fixtureInformation[i].getHomeTeam());
+			Debug.log(fixtureInformation[i].getHomeTeam());
 		}
 	}
 

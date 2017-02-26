@@ -6,7 +6,7 @@
  * Class Day: Friday
  * Class Time: 11:00 AM
  */
-public class Team_18267684 {
+public class Team {
 	public static final int TOTAL_TEAMS=16;    //The maximum number of teams
 	
 	private String teamName;                 //The name of the team
@@ -118,7 +118,7 @@ public class Team_18267684 {
 	 * @param mascot - The teams mascot
 	 * @param stadium - The home ground
 	 */
-	public Team_18267684 (String name, String mascot, String stadium){
+	public Team (String name, String mascot, String stadium){
 		teamName = name;
 		teamMascot = mascot;
 		homeGround = stadium;

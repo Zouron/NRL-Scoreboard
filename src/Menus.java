@@ -6,7 +6,7 @@
  * Class Day: Friday
  * Class Time: 11:00 AM
  */
-public class Menus_18267684 {
+public class Menus {
 	
   //This array of strings contains the options for the main menu
 	public static String mainMenu[] = {

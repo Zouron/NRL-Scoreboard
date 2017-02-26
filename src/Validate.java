@@ -10,7 +10,7 @@ import java.io.File;
 import java.util.Scanner;
 
 
-public class Validate_18267684 {
+public class Validate {
 	private static Scanner kb = new Scanner(System.in);
 	
 	/**
@@ -25,7 +25,7 @@ public class Validate_18267684 {
 			System.out.println("File " + fileName + " not found!!");
 			System.out.println("Please specify file name and location");
 			fileName = kb.nextLine();
-			Debug_18267684.log("file name: " + fileName);
+			Debug.log("file name: " + fileName);
 			readFile = new File (fileName);
 		}
 		return readFile;
@@ -37,21 +37,21 @@ public class Validate_18267684 {
 	 * @param message - The message that prompts the user to enter the name of the team
 	 * @param teamList - The team list.
 	 */
-	public static int getTeamIndex(String message, Team_18267684 teamList[]){
+	public static int getTeamIndex(String message, Team teamList[]){
 	  String userTeamName;
 	  int teamIndex =-1;
 	  int minLength=4;
 	  do{
-	    Display_18267684.out(message);
+	    Display.out(message);
 	    userTeamName = kb.next();
-	    Debug_18267684.log("userteamName: "+ userTeamName);
+	    Debug.log("userteamName: "+ userTeamName);
 	    if(userTeamName.length()>minLength){
 	    	teamIndex = isATeam(userTeamName,teamList);
 	    }
 	    
 	    if(teamIndex<0){
-	      Display_18267684.out(userTeamName + " is not a valid team name");
-	      Display_18267684.out("Please enter a valid team name that is longer than 5 characters");
+	      Display.out(userTeamName + " is not a valid team name");
+	      Display.out("Please enter a valid team name that is longer than 5 characters");
 	      userTeamName = kb.next();
 	    }
 	  }while(teamIndex<0);
@@ -66,7 +66,7 @@ public class Validate_18267684 {
 	 * @param teamList - The list of teams
 	 * @return
 	 */
-	private static int isATeam(String userInput, Team_18267684 teamList[] ){
+	private static int isATeam(String userInput, Team teamList[] ){
 	  int index=-1;
 	  for(int i=0; i <teamList.length; i++){
 	    if(userInput.equalsIgnoreCase(teamList[i].getTeamName()) 

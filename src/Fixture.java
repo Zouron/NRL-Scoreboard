@@ -6,7 +6,7 @@
  * Class Day: Friday
  * Class Time: 11:00 AM
  */
-public class Fixture_18267684 {
+public class Fixture {
 	
 	public final static int MAX_FIXTURES =8; 
 	
@@ -114,7 +114,7 @@ public class Fixture_18267684 {
 	 * essentially making a copy of this fixture
 	 * @param newFixture - The fixture that is passed in and to be copied
 	 */
-	public Fixture_18267684(Fixture_18267684 newFixture){
+	public Fixture(Fixture newFixture){
 		roundNumber = newFixture.roundNumber;
 		matchNumber = newFixture.matchNumber;
 		homeTeam = newFixture.homeTeam;
@@ -134,7 +134,7 @@ public class Fixture_18267684 {
 	 * @param token - A string array that has information about the fixture(match number, home team,
 	 *               away team, venue, time, date)
 	 */
-	public Fixture_18267684(int roundNo, String token[]){
+	public Fixture(int roundNo, String token[]){
 		roundNumber = roundNo;
 		matchNumber = Integer.parseInt(token[1]);
 		homeTeam = token[2];

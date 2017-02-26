@@ -6,7 +6,7 @@
  * Class Day: Friday
  * Class Time: 11:00 AM
  */
-public class Results_18267684 {
+public class Results {
 	private int matchNumber;         //The match number of the game
 	private int homeTeamScore;       //The goals scored by the home team
 	private int awayTeamScore;       //The goals scored by the away team
@@ -41,7 +41,7 @@ public class Results_18267684 {
 	 * @param homeScore - The home team score
 	 * @param awayScore - The away team score
 	 */
-	public Results_18267684(int match, int homeScore, int awayScore){
+	public Results(int match, int homeScore, int awayScore){
 		matchNumber = match;
 		homeTeamScore = homeScore;
 		awayTeamScore = awayScore;
@@ -51,7 +51,7 @@ public class Results_18267684 {
 	 * This constructor creates a copy of the results object passed into it 
 	 * @param newResults - The object to be copied
 	 */
-	public Results_18267684( Results_18267684 newResults){
+	public Results( Results newResults){
 		matchNumber = newResults.matchNumber;
 		homeTeamScore = newResults.homeTeamScore;
 		awayTeamScore = newResults.awayTeamScore;

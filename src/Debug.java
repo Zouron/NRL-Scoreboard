@@ -6,7 +6,7 @@
  * Class Day: Friday
  * Class Time: 11:00 AM
  */
-public class Debug_18267684 {
+public class Debug {
 	
 	/**
 	 * I created this class for the purposes of testing my code.

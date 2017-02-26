@@ -9,7 +9,7 @@
 import java.util.Scanner;
 
 
-public class Display_18267684 {
+public class Display {
 
   /**
    * This method takes in the options for the particular menu to be displayed
@@ -17,7 +17,7 @@ public class Display_18267684 {
    * @param options - a list of menu options
    */
 	public static void displayMenu(String[] options){
-		Display_18267684.out(options[0]);
+		Display.out(options[0]);
 		for(int i=1;i<options.length;i++){
 			System.out.println((i)+". "+ options[i]);
 		}
@@ -54,10 +54,10 @@ public class Display_18267684 {
 	 * @param round - An array of all our rounds
 	 * @param teamList - The array of our teams
 	 */
-	public static void viewAllRounds(Round_18267684[] round, Team_18267684 teamList[]){
-		for(int i=0; i <Round_18267684.TOTAL_ROUNDS;i++ ){
+	public static void viewAllRounds(Round[] round, Team teamList[]){
+		for(int i=0; i <Round.TOTAL_ROUNDS;i++ ){
 			viewRound(round, i, false, teamList);
-			Display_18267684.out("----------------------------------------------------------------------------------------------------------------\n");
+			Display.out("----------------------------------------------------------------------------------------------------------------\n");
 		}
 	}
 	
@@ -66,7 +66,7 @@ public class Display_18267684 {
 	 * @param roundNumber
 	 */
 	public static void roundTitle(int roundNumber){
-		Display_18267684.out("Round " + roundNumber + " Matches");
+		Display.out("Round " + roundNumber + " Matches");
 	}
 	
 	/**
@@ -76,18 +76,18 @@ public class Display_18267684 {
 	 * @param isFixture - If the round is being displayed for the schedule or the fixture
 	 * @param teamList - The list of the teams playing
 	 */
-	public static void viewRound(Round_18267684[] round,int index, boolean isFixture, Team_18267684 teamList[]){
+	public static void viewRound(Round[] round,int index, boolean isFixture, Team teamList[]){
 		roundTitle(index+1);
 		
 		//Displaying different header based on the view type
 		if(isFixture){
-			displayHeader(Menus_18267684.fixtureHeader);
+			displayHeader(Menus.fixtureHeader);
 		}
 		else{
-			displayHeader(Menus_18267684.roundHeader);
+			displayHeader(Menus.roundHeader);
 		}
 		
-		Fixture_18267684 roundFixture[] = new Fixture_18267684[round[index].getNumberOfFixtures()];
+		Fixture roundFixture[] = new Fixture[round[index].getNumberOfFixtures()];
 		roundFixture = round[index].getRoundFixture();
 		
 		for(int i=0; i<roundFixture.length; i++){
@@ -103,14 +103,14 @@ public class Display_18267684 {
 	 * @param isFixture - If the display is for the fixtures for schedule
 	 * @param teams - The list of teams
 	 */
-	public static void displayFixture(Fixture_18267684 match, boolean isFixture, Team_18267684 teams[]){
+	public static void displayFixture(Fixture match, boolean isFixture, Team teams[]){
 	  String score = "Not Played";
 	  int teamIndex;
 		//Get the team index for the home team
-		teamIndex = Round_18267684.getTeamIndex(match.getHomeTeam(), teams);
+		teamIndex = Round.getTeamIndex(match.getHomeTeam(), teams);
 		String homeTeam = match.getHomeTeam() + " " + teams[teamIndex].getMascotName();
 		//Get the team index for the away team
-		teamIndex =Round_18267684.getTeamIndex(match.getAwayTeam(), teams);
+		teamIndex =Round.getTeamIndex(match.getAwayTeam(), teams);
 		String awayTeam = match.getAwayTeam() + " " + teams[teamIndex].getMascotName();
 		
 		System.out.print(match.getMatchDate() + singleTabSpace(match.getMatchDate()));
@@ -122,7 +122,7 @@ public class Display_18267684 {
 		//If the output is for the fixture display display the score, if it isn't
 		if(isFixture){
 			if(match.getAwayTeamScore() <0){
-				Display_18267684.out(score);
+				Display.out(score);
 			}
 			else{
 				score = match.getAwayTeamScore() + "-" + match.getHomeTeamScore();
@@ -139,9 +139,9 @@ public class Display_18267684 {
 	 * @param team - the list of teams
 	 * @param rank - the rank of the team
 	 */
-	public static void teamLadder(Team_18267684 team, int rank){
+	public static void teamLadder(Team team, int rank){
 		String teamName = team.getTeamName() + " " + team.getMascotName();
-		Display_18267684.out(rank + "\t" /*+  team.getTeamName() + doubleTabSpace(team.getTeamName())
+		Display.out(rank + "\t" /*+  team.getTeamName() + doubleTabSpace(team.getTeamName())
 								+ team.getMascotName() + singleTabSpace(team.getMascotName())*/
 								+ teamName + tripleTabSpace(teamName)
 								+ team.getGamesPlayed() + "\t"
@@ -220,7 +220,7 @@ public class Display_18267684 {
 	 * @param message - Message to be displayed to the user
 	 */
 	public static void anyKeyToContinue(String message){
-		Display_18267684.out(message);
+		Display.out(message);
 		Scanner kb = new Scanner(System.in);
 		kb.nextLine();
 		
