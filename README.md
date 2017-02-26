@@ -122,26 +122,16 @@ Thirteen (13) Round#.txt files have been provided in the project zip file.
 
 When reading the text files into memory the data should be read into **appropriate** array(s) of objects. The classes for these objects are briefly outlined in section B(iv).
 
-B(iv) - Required Classes
-To write your solution for this assignment it is a requirement that you write appropriate code for at least the following
-java Classes:
-a) Team
-b) Fixture
-c) Round (this class is to be implemented by students enrolled in 300903 PT Advanced only).
+**_B(iv) - Required Classes_**
+
+To write your solution for this assignment it is a requirement that you write appropriate code for at least the following java Classes:
+  1. Team
+  2. Fixture
+  3. Round (this class is to be implemented by students enrolled in 300903 PT Advanced only).
+
 These classes are described in general terms as follows:
-a) Team class: the Team class represents an individual NRL team. The Team class needs to store data for the
-Team Name, Team Mascot, Home Ground name, Rank, accumulated results for each match played during the
-season which includes number of games played, number of games won, number of games lost, number of
-byes, points scored For, points scored Against, total competition points. As well as the normal methods thatshould be created for a class (eg, constructors, mutators, and accessors) you will need to decide upon other
-appropriate methods for this class based upon the general requirements of the assignment specification.
-b) Fixture class: the Fixture class represents an individual match in the NRL competition. The Fixture class needs
-to store data for the match number, round number, Home Team name, Away Team name, match date, match
-venue, match time, Home team score, Away team score. As well as the normal methods that should be created
-for a class (eg, constructors, mutators, and accessors) you will need to decide upon other appropriate methods
-for this class based upon the general requirements of the assignment specification.
-c) Round class (this class is to be implemented by students enrolled in 300903 PT Advanced only): the Round
-class represents a complete Round of matches from the NRL competition. The Round class needs to store data
-for the Round Number, Number of Fixtures to be played, Fixture information for the round, results for the round.
-The fixture information and the results for the round should be implemented as an aggregation of classes.
-Apart from the above classes it is quite likely that you will also need to write other classes depending upon your solution
-method.
+  1. Team class: the Team class represents an individual NRL team. The Team class needs to store data for the Team Name, Team Mascot, Home Ground name, Rank, accumulated results for each match played during the season which includes number of games played, number of games won, number of games lost, number of byes, points scored For, points scored Against, total competition points. As well as the normal methods thatshould be created for a class (eg, constructors, mutators, and accessors) you will need to decide upon other appropriate methods for this class based upon the general requirements of the assignment specification.
+  2. Fixture class: the Fixture class represents an individual match in the NRL competition. The Fixture class needs to store data for the match number, round number, Home Team name, Away Team name, match date, match venue, match time, Home team score, Away team score. As well as the normal methods that should be created for a class (eg, constructors, mutators, and accessors) you will need to decide upon other appropriate methods for this class based upon the general requirements of the assignment specification.
+  3. Round class (this class is to be implemented by students enrolled in 300903 PT Advanced only): the Round class represents a complete Round of matches from the NRL competition. The Round class needs to store data for the Round Number, Number of Fixtures to be played, Fixture information for the round, results for the round. The fixture information and the results for the round should be implemented as an aggregation of classes.
+
+Apart from the above classes it is quite likely that you will also need to write other classes depending upon your solution method.
